@@ -5,17 +5,22 @@
  */
 package com.example.consumirserviciorestful.model;
 
-public class Rol {
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
+public class Rol {
+    @SerializedName("rolId")
+    @Expose
     private Integer rolId;
+    @SerializedName("rolNombre")
+    @Expose
     private String rolNombre;
 
 
     public Rol() {
     }
 
-    public Rol(Integer rolId, String rolNombre) {
-        this.rolId = rolId;
+    public Rol(String rolNombre) {
         this.rolNombre = rolNombre;
     }
 
@@ -33,5 +38,13 @@ public class Rol {
 
     public void setRolNombre(String rolNombre) {
         this.rolNombre = rolNombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Rol{" +
+                "rolId=" + rolId +
+                ", rolNombre='" + rolNombre + '\'' +
+                '}';
     }
 }
